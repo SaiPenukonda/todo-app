@@ -4,4 +4,14 @@ Color darkGreyColor = new Color(0xFF212128);
 Color redColor = new Color(0xFFDC4F64);
 
 
-TextStyle intrayTitleStyle = new TextStyle(fontStyle: FontStyle.italic , fontSize: 40 , fontWeight: FontWeight.w900,);
+TextStyle intrayTitleStyle = new TextStyle(
+  fontStyle: FontStyle.italic, 
+  fontSize: 40,
+  fontWeight: FontWeight.w900,
+);
+
+TextStyle darkTodoTitle = new TextStyle(
+  fontFamily: 'Avenir',
+  fontSize: 30,
+  fontWeight: FontWeight.w300,
+);
