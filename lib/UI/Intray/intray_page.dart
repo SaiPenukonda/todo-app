@@ -31,8 +31,17 @@ class _IntrayPageState extends State<IntrayPage> {
         stream: tasksBloc.getTasks,
         initialData: [],
           builder: (context, snapshot) {
-            taskList = snapshot.data;
-            return _buildReorderableListSimple(context, taskList);
+            if (snapshot.hasData && snapshot != null) {
+              if (snapshot.data.length > 0) {
+                return _buildReorderableListSimple(context, snapshot.data);
+              }
+              else if (snapshot.data.length==0){
+                return Center(child: Text('No Data'));
+              }
+            } else if (snapshot.hasError) {
+              return Container();
+            }
+            return CircularProgressIndicator();
           }
       )
       // child: ReorderableListView(
